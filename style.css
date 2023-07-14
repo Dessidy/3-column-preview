@@ -1,0 +1,181 @@
+/* Fonts */
+@font-face {
+    font-family: big;
+    src: url(BigShouldersDisplay-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: lexand;
+    src: url(LexendDeca-VariableFont_wght.ttf);
+
+}
+
+/* root variables */
+:root {
+    /* Article Backgrounds */
+    --clr-first: hsl(31, 77%, 52%);
+    --clr-second: hsl(184, 100%, 22%);
+    --clr-last: hsl(179, 100%, 13%);
+
+    /* texts, background, heading and button */
+    --clr-paragraphs: hsla(0, 0%, 100%, 0.75);
+    --clr-background-headings-buttons: hsl(0, 0%, 95%);
+
+    /* font weight */
+    --fw-small: 400;
+    --fw-big: 700;
+
+    /* font family */
+    --ff-big-shoulder: big;
+    --ff-lexand-small: lexand;
+}
+
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing-: border-box;
+    -webkit-box-sizing-: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+img {
+    display: block;
+    min-width: 100%;
+}
+
+/* ======================================================= */
+
+
+/* Main Body*/
+body:not(.attribution) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    font-family: var(--ff-lexand-small);
+    font-weight: var(--fw-small);
+
+    background: var(--clr-background-headings-buttons);
+    color: var(--clr-paragraphs);
+
+    padding: 2.5rem 0;
+}
+
+/* ======================================================= */
+
+/* Main Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    text-align: left;
+    max-width: 375px;
+    border-radius: .7rem;
+    overflow: hidden;
+}
+
+/* ============================================================= */
+
+/* Sub Container */
+
+/* Contents*/
+.sub_container .content {
+    display: grid;
+    gap: 2rem;
+    padding: 3rem;
+}
+
+/* content backgrond colors */
+.sub_container .sedans {
+    background: var(--clr-first);
+}
+
+.sub_container .suvs {
+    background: var(--clr-second);
+}
+
+.sub_container .luxury {
+    background: var(--clr-last);
+}
+
+/* Things within the content container(TWTCC) */
+.content .img_container {
+    width: 20%;
+}
+
+.content .title {
+    color: var(--clr-background-headings-buttons);
+
+    font-family: var(--ff-big-shoulder);
+    font-size: 7.5vh;
+    font-weight: var(--fw-big);
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.content .about {
+    line-height: 2;
+    padding: 0rem 2rem 0rem 0rem;
+    font-size: 1rem;
+}
+
+/* Buttons (TWTCC)*/
+.content .btn {
+    background: var(--clr-background-headings-buttons);
+    
+    text-decoration: none;
+    padding: 1rem;
+    width: 60%;
+    border-radius: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: all ease-in-out 250ms;
+}
+
+.sedans .btn {
+    color: var(--clr-first);
+}
+
+.suvs .btn {
+    color: var(--clr-second);
+}
+
+.luxury .btn {
+    color: var(--clr-last);
+}
+
+.content .btn:hover {
+    background: inherit;
+    color: var(--clr-background-headings-buttons);
+    border: 2px solid var(--clr-background-headings-buttons);
+}
+
+/* =================================================================== */
+
+/* Media Query */
+@media (min-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        /* min-width: 1071px; */
+        max-width: 1062px;
+    }
+
+    .sub_container .content {
+        gap: 3rem;
+    }
+}
